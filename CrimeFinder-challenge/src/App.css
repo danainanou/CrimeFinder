@@ -6,3 +6,47 @@
 .header h2 {
   font-style: italic;
 }
+
+.table-wrapper {
+  margin: 2rem auto;
+  width: min(1100px, 90vw);
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(64, 43, 58, 0.12);
+  border: 1px solid #e5d7df;
+  background: #fff;
+}
+
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #f0e4ea;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table-wrapper th {
+  background: #f7edf2;
+  color: #402B3A;
+  font-weight: 700;
+}
+
+.table-wrapper tbody tr:nth-child(even) {
+  background: #fcf7fa;
+}
+
+.table-wrapper tbody tr:hover {
+  background: #f4ebf1;
+}
+
+.table-wrapper p {
+  margin: 0;
+  padding: 1rem;
+  color: #402B3A;
+}

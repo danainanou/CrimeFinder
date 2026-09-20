@@ -1,7 +1,8 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { SearchComponent } from './components/SearchComponent'
 import { DatePickerComponent } from './components/DatePickerComponent'
 import { Header } from './components/Header'
+import { TableComponent } from './components/TableComponent'
 import './App.css'
 import type { PostCodeData, CrimeData } from './types'
 import axios, { type AxiosResponse } from 'axios'
@@ -15,6 +16,20 @@ function App() {
   const [results, setResults] = useState<PostCodeData[]>([])
   const [crimeResults, setCrimeResults] = useState<CrimeData[]>([])
 
+  const crimeTableRows = useMemo(() => {
+    const postcodeList = submittedPostcodes
+      .split(',')
+      .map(postcode => postcode.trim())
+      .filter(Boolean)
+
+    return crimeResults.map((crime, index) => ({
+      postcode: postcodeList[index % postcodeList.length] ?? postcodeList[0] ?? 'Unknown',
+      date: crime.month,
+      street: crime.location?.street?.name ?? 'Unknown street',
+      crimeType: crime.category,
+      outcomeStatus: crime.outcome_status?.category ?? 'No outcome recorded',
+    }))
+  }, [crimeResults, submittedPostcodes])
 
   function handleSearch(value: string) {
     setSubmittedPostcodes(value)
@@ -118,6 +133,8 @@ useEffect(() => {
       </div>
 
       {(!submittedPostcodes || !datePickerDate) && <p>Enter a date and a postcode to search.</p>}
+
+      {crimeTableRows.length > 0 && <TableComponent data={crimeTableRows} />}
     </>
   )
 }
