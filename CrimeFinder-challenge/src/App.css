@@ -50,3 +50,118 @@
   padding: 1rem;
   color: #402B3A;
 }
+
+.overview {
+  width: min(1100px, 90vw);
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #fffafc;
+  border: 1px solid #eadfe6;
+  box-shadow: 0 8px 20px rgba(64, 43, 58, 0.08);
+}
+
+.overview h3 {
+  margin: 1.5rem 0 1rem;
+  color: #402B3A;
+}
+
+.overview-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 160px;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #f7edf2;
+  border: 1px solid #eadfe6;
+}
+
+.overview-card-title {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #402B3A;
+}
+
+.overview-card-count {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #402B3A;
+}
+
+.overview-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: min(1100px, 90vw);
+  margin: 2rem auto 0;
+}
+
+.search-form {
+  flex: 1 1 0;
+  min-width: 300px;
+}
+
+.form-input {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  width: 100%;
+}
+
+.form-input input {
+  flex: 1 1 auto;
+  min-width: 220px;
+  padding: 0.8rem 1rem;
+  border: 1px solid #d9c5d0;
+  border-radius: 10px;
+  background: #fff;
+  color: #402B3A;
+  font-size: 0.95rem;
+}
+
+.form-input button {
+  padding: 0.8rem 1.1rem;
+  border: none;
+  border-radius: 10px;
+  background: #402B3A;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-input button:hover {
+  background: #5a334d;
+}
+
+.inputs > *:last-child {
+  margin-left: auto;
+}
+
+.MuiFormControl-root {
+  min-width: 200px;
+  margin-left: auto;
+}
+
+.MuiInputBase-root {
+  border-radius: 10px !important;
+  background: #fff;
+}
+
+p {
+  width: min(1100px, 90vw);
+  margin: 1rem auto 0;
+  color: #402B3A;
+}
