@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useMemo } from 'react'
 import { SearchComponent } from './components/SearchComponent'
 import { DatePickerComponent } from './components/DatePickerComponent'
 import { Header } from './components/Header'
+import { CrimeOverview } from './components/CrimeOverview'
 import { TableComponent } from './components/TableComponent'
 import './App.css'
 import type { PostCodeData, CrimeData } from './types'
@@ -131,6 +132,8 @@ useEffect(() => {
         <SearchComponent inputValue={searchInputRef} onSubmit={handleSearch} />
         <DatePickerComponent datePickerValue={datePickerDate} onChange={(newValue) => setdatePickerDate(newValue ?? dayjs())} />
       </div>
+
+      <CrimeOverview crimes={crimeResults} />
 
       {(!submittedPostcodes || !datePickerDate) && <p>Enter a date and a postcode to search.</p>}
 
